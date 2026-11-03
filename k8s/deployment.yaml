@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backedn
+  name: file-manager
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: python
+      app: file-manager
   template:
     metadata:
       labels:
-        app: python
+        app: file-manager
     spec:
       containers:
-        - name: upload-cont
+        - name: file-manager
           image: your-account/file-manager:latest
           ports:
             - containerPort: 5000
